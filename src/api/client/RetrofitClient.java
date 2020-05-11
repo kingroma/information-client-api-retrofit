@@ -17,7 +17,7 @@ import retrofit2.Retrofit;
 
 public class RetrofitClient {
 	
-	private static final String BASE_URL = "http://127.0.0.1:8080/api/" ; 
+	private static String BASE_URL = "http://127.0.0.1:8080/api/" ; 
 	
 //	public static TestService getApiService() {
 //		return getInstance().create(TestService.class);
@@ -25,6 +25,10 @@ public class RetrofitClient {
 	
 	public static UserRetrofitApi getUserRetrofitApi() {
 		return getInstance().create(UserRetrofitApi.class);
+	}
+	
+	public static void reBaseUrl(String ip) {
+		BASE_URL = "http://" + ip + ":8080/api/";
 	}
 	
 	private static Retrofit getInstance() {

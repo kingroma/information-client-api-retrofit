@@ -11,8 +11,6 @@ import common.util.ObjectUtil;
 public class Main {
 
 	public static void main(String[] args) {
-		//PropertyConfigurator.configure("-Dlog4j.configuration=file:/C:\\Users\\admin\\Desktop\\project\\my2\\information-client-api-retrofit\\log4j.xml");
-		
 		String userId = "kingroma";
 		String userPw = "4235";
 		

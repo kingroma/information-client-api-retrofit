@@ -29,6 +29,7 @@ public class UserService {
 				
 				if ( ResultConfig.SUCCESS_CODE.equals(ud.getResultCode())) {
 					token = ud.getResult();
+					RetrofitConfig.TOKEN = token ;
 				}else { 
 					logger.error("[ " + ud.getResultCode() + " ] " + ud.getResultMessage());
 				}
@@ -37,10 +38,6 @@ public class UserService {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		
-		if ( token != null && !token.isEmpty() ) {
-			RetrofitConfig.TOKEN = token ;
 		}
 		
 		return token ; 

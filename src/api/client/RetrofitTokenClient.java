@@ -18,7 +18,7 @@ import retrofit2.Retrofit;
 
 public class RetrofitTokenClient {
 	
-	private static final String BASE_URL = "http://127.0.0.1:8080/api/" ; 
+	private static String BASE_URL = "http://127.0.0.1:8080/api/" ; 
 	
 	public static ProgramRetrofitApi getProgramRetrofitApi() {
 		return getInstance().create(ProgramRetrofitApi.class);
@@ -26,6 +26,10 @@ public class RetrofitTokenClient {
 	
 	public static ContentRetrofitApi getContentRetrofitApi() {
 		return getInstance().create(ContentRetrofitApi.class);
+	}
+	
+	public static void reBaseUrl(String ip) {
+		BASE_URL = "http://" + ip + ":8080/api/";
 	}
 	
 	private static Retrofit getInstance() {
